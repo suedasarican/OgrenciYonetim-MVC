@@ -1,0 +1,25 @@
+﻿@model List<OgrenciYonetim.Models.Ogrenci>
+<h2>Öğrenci Listesi</h2>
+<a href="/Ogrenci/Ekle" class="btn btn-primary">Yeni Ekle</a>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Bölüm</th>
+        <th>İşlem</th>
+    </tr>
+    @foreach (var ogr in Model)
+    {
+        <tr>
+            <td>@ogr.ID</td>
+            <td>@ogr.Ad</td>
+            <td>@ogr.Soyad</td>
+            <td>@ogr.Bolum</td>
+            <td>
+                <a href="/Ogrenci/Sil/@ogr.ID" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
